@@ -1,0 +1,101 @@
+:root{
+  --bg:#f7f9fc;
+  --card:#fff;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+  --radius:12px;
+  --gap:14px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#f6fbff 0%,var(--bg) 100%);
+  color:#0f172a;
+  padding:28px;
+}
+
+.container{
+  max-width:980px;
+  margin:0 auto;
+}
+
+header{margin-bottom:18px}
+h1{margin:0 0 6px;font-size:1.4rem}
+h2{margin:0 0 10px;font-size:1rem}
+.muted{color:var(--muted);font-size:0.95rem}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 6px 20px rgba(20,30,60,0.06);
+  margin-bottom:18px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:var(--gap);
+  margin-bottom:12px;
+}
+
+label{display:block;margin-bottom:8px;font-weight:600;font-size:0.88rem}
+input[type="text"],input[type="password"],input[type="number"],select,textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e6eef8;
+  background: #fbfdff;
+  font-size:0.95rem;
+  outline:none;
+}
+textarea{resize:vertical;min-height:80px}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+
+button{
+  background:var(--accent);
+  color:white;
+  border:0;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+button.secondary{
+  background:#efefef;color:#111;border:1px solid #e6eef8;
+}
+button:active{transform:translateY(1px)}
+
+#studentsContainer table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px;
+}
+#studentsContainer th, #studentsContainer td{
+  padding:8px 10px;
+  border-bottom:1px solid #f1f6fb;
+  text-align:left;
+  vertical-align:middle;
+  font-size:0.95rem;
+}
+.roomInput{
+  width:86px;
+  padding:6px 8px;
+  border-radius:6px;
+  border:1px solid #e6eef8;
+  background:#fbfdff;
+}
+.small{
+  font-size:0.9rem;color:var(--muted)
+}
+
+footer{margin-top:18px;text-align:center}
+
+

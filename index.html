@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Roommate Matcher — Student Submission & Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <h1>AI Roommate Matcher & Hostel Allocation </h1>
+          <p class="muted">Student submits profile → Admin logs in to view all students, open ChatGPT with data, then assign rooms.</p>
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="navStudent" class="secondary">Student Application</button>
+          <button id="navAdmin" class="secondary">Admin Login</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- STUDENT FORM VIEW -->
+    <section id="view-student" class="card view">
+      <h2>Student — Submit Your Profile</h2>
+      <p>Fill your details and press <strong>Submit</strong>.</p>
+
+      <div class="grid">
+        <div>
+          <label for="s_name">Name</label>
+          <input id="s_name" placeholder="e.g., Rahul" />
+        </div>
+        <div>
+          <label for="s_gender">Gender</label>
+          <select id="s_gender">
+            <option value="any">Any</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other / Prefer not to say</option>
+          </select>
+        </div>
+        <div>
+          <label for="s_sleep">Sleep Schedule</label>
+          <select id="s_sleep">
+            <option value="early">Early (sleep by 10pm)</option>
+            <option value="normal">Normal (11pm-12am)</option>
+            <option value="late">Late (after 12am)</option>
+          </select>
+        </div>
+        <div>
+          <label for="s_clean">Cleanliness</label>
+          <select id="s_clean">
+            <option value="very_clean">Very tidy</option>
+            <option value="moderate">Moderately tidy</option>
+            <option value="relaxed">Relaxed about cleanliness</option>
+          </select>
+        </div>
+        <div>
+          <label for="s_study">Study Habits</label>
+          <select id="s_study">
+            <option value="quiet">Needs quiet</option>
+            <option value="group">Likes group study</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div>
+          <label for="s_habits">Smoking / Drinking</label>
+          <select id="s_habits">
+            <option value="no">No</option>
+            <option value="occasionally">Occasionally</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="studentSubmitBtn">Submit</button>
+        <button id="studentResetBtn" class="secondary">Reset Form</button>
+      </div>
+    </section>
+
+    <!-- ADMIN LOGIN VIEW -->
+    <section id="view-admin-login" class="card view" style="display:none;">
+      <h2>Admin Login</h2>
+      <p>Use username <strong>admin</strong> and password <strong>1234</strong> (demo credentials).</p>
+
+      <div style="max-width:360px;">
+        <label for="adminUser">Username</label>
+        <input id="adminUser" placeholder="USERNAME" />
+        <label for="adminPass">Password</label>
+        <input id="adminPass" type="password" placeholder="PASSWORD" />
+        <div class="actions" style="margin-top:12px;">
+          <button id="adminLoginBtn">Login</button>
+          <button id="backToStudent" class="secondary">Back</button>
+        </div>
+        <p id="loginError" class="muted" style="color:#b91c1c; display:none; margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <!-- ADMIN DASHBOARD VIEW -->
+    <section id="view-admin" class="card view" style="display:none;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Admin Dashboard — Student Submissions</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="openChatBtn">Open ChatGPT — Suggest Matches</button>
+          <button id="clearAllBtn" class="secondary">Clear All</button>
+          <button id="adminLogout" class="secondary">Logout</button>
+        </div>
+      </div>
+
+      <p class="muted">Assign room numbers in the table below and press <strong>Save Allocations</strong>.</p>
+
+      <div id="studentsContainer" style="overflow:auto; margin-top:14px;"></div>
+
+      <div style="margin-top:12px;">
+        <button id="saveAllocBtn">Save Allocations</button>
+      </div>
+    </section>
+
+    <footer style="margin-top:22px;">
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
